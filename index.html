@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aura Café</title>
+
+  <!-- FUENTES -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="logo">Aura Café</div>
+
+  <nav>
+    <a href="#menu">Menú</a>
+    <a href="#galeria">Galería</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <a href="#contacto" class="btn small">Reservar</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Un lugar para disfrutar el momento</h1>
+  <p>Café de especialidad, ambiente cálido y experiencias únicas.</p>
+  <a href="#menu" class="btn">Ver menú</a>
+</section>
+
+<!-- MENÚ -->
+<section id="menu" class="menu">
+  <h2>Nuestro Menú</h2>
+
+  <div class="menu-grid">
+
+    <div class="menu-card">
+      <h3>☕ Café Espresso</h3>
+      <p>Intenso y aromático</p>
+      <span>$1200</span>
+    </div>
+
+    <div class="menu-card">
+      <h3>🥐 Medialunas</h3>
+      <p>Recién horneadas</p>
+      <span>$900</span>
+    </div>
+
+    <div class="menu-card">
+      <h3>🍰 Tortas</h3>
+      <p>Sabores caseros</p>
+      <span>$1500</span>
+    </div>
+
+    <div class="menu-card">
+      <h3>🧋 Bebidas frías</h3>
+      <p>Refrescantes y naturales</p>
+      <span>$1300</span>
+    </div>
+
+  </div>
+</section>
+<section class="about">
+  <h2>Nuestra esencia</h2>
+  <p>
+    En Aura Café creemos que cada taza cuenta una historia. 
+    Creamos un espacio donde el café, el diseño y la tranquilidad se combinan 
+    para ofrecer una experiencia única.
+  </p>
+</section>
+<!-- GALERÍA -->
+<section id="galeria" class="galeria">
+  <h2>Nuestro espacio</h2>
+  <p>Un ambiente pensado para relajarte y disfrutar</p>
+
+  <div class="carousel">
+
+    <button class="prev">‹</button>
+
+    <div class="carousel-track">
+      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="Café servido">
+      <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085" alt="Interior cafetería">
+      <img src="https://images.unsplash.com/photo-1521305916504-4a1121188589" alt="Taza de café">
+      <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348" alt="Barista preparando café">
+    </div>
+
+    <button class="next">›</button>
+
+  </div>
+</section>
+
+<!-- UBICACIÓN -->
+<section class="ubicacion">
+  <h2>Visitános</h2>
+
+  <p>📍 Corrientes Capital, Argentina</p>
+  <p>🕒 Lunes a Sábado 8:00 - 20:00</p>
+
+  <div class="map-container">
+    <iframe 
+      src="https://maps.google.com/maps?q=corrientes&t=&z=13&ie=UTF8&iwloc=&output=embed">
+    </iframe>
+  </div>
+</section>
+<section class="reviews">
+  <h2>Lo que dicen nuestros clientes</h2>
+  <p>Experiencias reales en Aura Café</p>
+
+  <div class="reviews-grid">
+
+    <div class="review-card">
+      <p>"El mejor café de la ciudad, el ambiente es increíble."</p>
+      <span>★★★★★</span>
+      <h4>- Martina</h4>
+    </div>
+
+    <div class="review-card">
+      <p>"Perfecto para trabajar o relajarse. Muy recomendado."</p>
+      <span>★★★★★</span>
+      <h4>- Lucas</h4>
+    </div>
+
+    <div class="review-card">
+      <p>"Excelente atención y productos de calidad."</p>
+      <span>★★★★★</span>
+      <h4>- Sofía</h4>
+    </div>
+
+  </div>
+</section>
+<!-- CONTACTO -->
+<section id="contacto" class="contacto">
+  <h2>Reservá tu mesa</h2>
+  <p>Viví la experiencia Aura Café</p>
+
+  <a href="https://wa.me/5493794235676" class="btn" target="_blank">
+    WhatsApp
+  </a>
+</section>
+
+<!-- JS -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const track = document.querySelector(".carousel-track");
+  const images = document.querySelectorAll(".carousel-track img");
+
+  let index = 0;
+
+  document.querySelector(".next").onclick = () => {
+    index = (index + 1) % images.length;
+    track.style.transform = `translateX(-${index * 100}%)`;
+  };
+
+  document.querySelector(".prev").onclick = () => {
+    index = (index - 1 + images.length) % images.length;
+    track.style.transform = `translateX(-${index * 100}%)`;
+  };
+
+});
+</script>
+
+</body>
+</html>
