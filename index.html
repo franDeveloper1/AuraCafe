@@ -3,162 +3,356 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aura Café</title>
-
-  <!-- FUENTES -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-
+  <title>Aura Café — Café de Especialidad · Corrientes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-
-<header class="nav">
+<!-- NAV -->
+<header class="nav" id="nav">
   <div class="logo">Aura Café</div>
 
-  <nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+    <span></span><span></span><span></span>
+  </button>
+
+  <nav class="nav-links" id="navLinks">
     <a href="#menu">Menú</a>
-    <a href="#galeria">Galería</a>
+    <a href="#cursos">Cursos</a>
+    <a href="#ubicacion">Ubicación</a>
     <a href="#contacto">Contacto</a>
   </nav>
 
-  <a href="#contacto" class="btn small">Reservar</a>
+  <a href="#contacto" class="btn sm nav-cta">Reservar</a>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-  <h1>Un lugar para disfrutar el momento</h1>
-  <p>Café de especialidad, ambiente cálido y experiencias únicas.</p>
-  <a href="#menu" class="btn">Ver menú</a>
+  <div class="hero-bg"></div>
+  <div class="hero-ov"></div>
+
+  <!-- Tazas decorativas flotantes -->
+  <div class="floating-cups" aria-hidden="true">
+    <svg class="cup-float cf1" width="90" height="100" viewBox="0 0 90 100">
+      <rect x="18" y="30" width="54" height="42" rx="8" fill="#c08457"/>
+      <path d="M18 42 Q8 42 8 54 Q8 66 18 66" stroke="#c08457" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <rect x="14" y="72" width="62" height="6" rx="3" fill="#c08457" opacity=".6"/>
+    </svg>
+    <svg class="cup-float cf2" width="70" height="80" viewBox="0 0 70 80">
+      <rect x="14" y="22" width="42" height="34" rx="7" fill="#d4996e"/>
+      <path d="M14 32 Q6 32 6 42 Q6 52 14 52" stroke="#d4996e" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <rect x="10" y="56" width="50" height="5" rx="2.5" fill="#d4996e" opacity=".5"/>
+    </svg>
+    <svg class="cup-float cf3" width="110" height="120" viewBox="0 0 110 120">
+      <rect x="22" y="36" width="66" height="52" rx="10" fill="#c08457"/>
+      <path d="M22 52 Q10 52 10 66 Q10 80 22 80" stroke="#c08457" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <rect x="17" y="88" width="76" height="7" rx="3.5" fill="#c08457" opacity=".55"/>
+    </svg>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-tag">
+      <span class="pulse-dot"></span>
+      Café de especialidad · Corrientes
+    </div>
+    <h1>Café increíble.<br><em>Momentos únicos.</em></h1>
+    <p class="hero-sub">Desayunos, meriendas y cursos de barista en un ambiente diseñado para que cada visita sea especial.</p>
+    <div class="hero-btns">
+      <a href="#menu" class="btn">Ver menú</a>
+      <a href="#contacto" class="btn outline">Reservar mesa</a>
+    </div>
+    <p class="hero-note"><span class="pulse-dot"></span> Promos todos los días</p>
+  </div>
+
+  <!-- Taza hero animada -->
+  <div class="hero-cup" aria-hidden="true">
+    <svg class="cup-hero" width="220" height="260" viewBox="0 0 220 260">
+      <defs>
+        <clipPath id="cupClip">
+          <rect x="40" y="80" width="140" height="120" rx="16"/>
+        </clipPath>
+      </defs>
+      <rect x="40" y="80" width="140" height="120" rx="16" fill="#2a1f14" stroke="#c08457" stroke-width="1.5"/>
+      <rect x="40" y="140" width="140" height="60" rx="0" fill="#5c3317" clip-path="url(#cupClip)" class="liquid-fill"/>
+      <rect x="40" y="140" width="140" height="60" rx="0" fill="#6b3d1e" clip-path="url(#cupClip)" opacity=".4"/>
+      <ellipse cx="110" cy="144" rx="68" ry="10" fill="#7a4724" opacity=".6"/>
+      <rect x="36" y="196" width="148" height="10" rx="5" fill="#c08457" opacity=".7"/>
+      <rect x="22" y="206" width="176" height="12" rx="6" fill="#c08457" opacity=".5"/>
+      <path d="M180 110 Q204 110 204 140 Q204 170 180 170" stroke="#c08457" stroke-width="8" fill="none" stroke-linecap="round"/>
+      <rect x="52" y="82" width="40" height="8" rx="4" fill="#c08457" opacity=".15" class="cup-shine"/>
+      <ellipse cx="95" cy="62" rx="4" ry="10" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="2.5" stroke-linecap="round" class="s1"/>
+      <ellipse cx="110" cy="58" rx="4" ry="12" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="2.5" stroke-linecap="round" class="s2"/>
+      <ellipse cx="125" cy="62" rx="4" ry="10" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="2.5" stroke-linecap="round" class="s3"/>
+      <text x="110" y="240" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="15" font-weight="700" fill="#c08457" letter-spacing="3">AURA</text>
+    </svg>
+  </div>
 </section>
 
-<section id="menu" class="menu">
-  <h2>Nuestro Menú</h2>
+<!-- PROMOS -->
+<div class="promos-bg fade">
+  <div class="promos-inner">
+    <p class="label">Hoy en Aura</p>
+    <h2 class="title">Promociones del día</h2>
+    <div class="promos-grid">
+      <div class="promo-card">
+        <div class="promo-left">
+          <span class="promo-icon">☕</span>
+          <h3>Café + Medialunas</h3>
+          <p>El clásico de siempre</p>
+        </div>
+        <span class="promo-price">$1800</span>
+      </div>
+      <div class="promo-card hl">
+        <div class="promo-left">
+          <span class="promo-icon">🥐</span>
+          <h3>Desayuno Completo</h3>
+          <p>El más elegido</p>
+        </div>
+        <span class="promo-price">$2500</span>
+      </div>
+      <div class="promo-card">
+        <div class="promo-left">
+          <span class="promo-icon">🍰</span>
+          <h3>Café + Torta</h3>
+          <p>Dulce combinación</p>
+        </div>
+        <span class="promo-price">$2200</span>
+      </div>
+    </div>
+  </div>
+</div>
 
+<!-- SECCIÓN TAZAS ANIMADAS -->
+<div class="cup-showcase fade">
+  <div class="cup-showcase-inner">
+    <p class="label">Nuestras preparaciones</p>
+    <h2 class="title">El arte del café</h2>
+    <p class="sec-sub">Cada taza, una experiencia. Preparada con granos de origen y técnica de barista.</p>
+    <div class="cup-stage">
+
+      <div class="cup-item">
+        <svg width="100" height="130" viewBox="0 0 100 130">
+          <rect x="18" y="38" width="64" height="58" rx="10" fill="#1e1410" stroke="#c08457" stroke-width="1.2"/>
+          <rect x="18" y="70" width="64" height="26" rx="0" fill="#3d1f0a" opacity=".9"/>
+          <ellipse cx="50" cy="72" rx="30" ry="5" fill="#5a2e0e" opacity=".7"/>
+          <path d="M82 55 Q94 55 94 68 Q94 81 82 81" stroke="#c08457" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <rect x="14" y="96" width="72" height="6" rx="3" fill="#c08457" opacity=".6"/>
+          <rect x="8" y="102" width="84" height="7" rx="3.5" fill="#c08457" opacity=".4"/>
+          <ellipse cx="36" cy="26" rx="3" ry="9" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2" class="s1"/>
+          <ellipse cx="50" cy="22" rx="3" ry="11" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2" class="s2"/>
+          <ellipse cx="64" cy="26" rx="3" ry="9" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2" class="s3"/>
+        </svg>
+        <span class="cup-name">Espresso</span>
+        <span class="cup-desc">Intenso · Puro</span>
+      </div>
+
+      <div class="cup-item">
+        <svg width="130" height="150" viewBox="0 0 130 150">
+          <rect x="20" y="44" width="90" height="72" rx="14" fill="#1a1210" stroke="#c08457" stroke-width="1.2"/>
+          <rect x="20" y="84" width="90" height="32" rx="0" fill="#6b3d1e" opacity=".5"/>
+          <ellipse cx="65" cy="86" rx="43" ry="7" fill="#c8956b" opacity=".5"/>
+          <ellipse cx="65" cy="84" rx="38" ry="6" fill="#d4a574" opacity=".35"/>
+          <path d="M65 70 Q70 62 78 70 Q86 78 90 70" stroke="#c8956b" stroke-width="1.8" fill="none" opacity=".8" stroke-linecap="round"/>
+          <path d="M40 72 Q48 64 56 72" stroke="#c8956b" stroke-width="1.5" fill="none" opacity=".6" stroke-linecap="round"/>
+          <path d="M110 62 Q122 62 122 78 Q122 94 110 94" stroke="#c08457" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <rect x="16" y="116" width="98" height="7" rx="3.5" fill="#c08457" opacity=".6"/>
+          <rect x="8" y="123" width="114" height="8" rx="4" fill="#c08457" opacity=".35"/>
+          <ellipse cx="48" cy="30" rx="3.5" ry="11" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="2.2" class="s1"/>
+          <ellipse cx="65" cy="25" rx="3.5" ry="14" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="2.2" class="s2"/>
+          <ellipse cx="82" cy="30" rx="3.5" ry="11" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="2.2" class="s3"/>
+        </svg>
+        <span class="cup-name">Latte Art</span>
+        <span class="cup-desc">Suave · Cremoso</span>
+      </div>
+
+      <div class="cup-item">
+        <svg width="100" height="130" viewBox="0 0 100 130">
+          <rect x="16" y="36" width="68" height="62" rx="12" fill="#12100e" stroke="#c08457" stroke-width="1.2"/>
+          <rect x="16" y="68" width="68" height="30" rx="0" fill="#1e1208" opacity=".9"/>
+          <ellipse cx="50" cy="70" rx="32" ry="6" fill="#2d1a05" opacity=".9"/>
+          <ellipse cx="50" cy="68" rx="28" ry="5" fill="#3d2408" opacity=".7"/>
+          <rect x="16" y="36" width="68" height="16" rx="12" fill="rgba(255,255,255,.04)"/>
+          <path d="M84 52 Q96 52 96 66 Q96 80 84 80" stroke="#c08457" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <rect x="12" y="98" width="76" height="6" rx="3" fill="#c08457" opacity=".6"/>
+          <rect x="6" y="104" width="88" height="7" rx="3.5" fill="#c08457" opacity=".4"/>
+          <ellipse cx="36" cy="24" rx="3" ry="9" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="2" class="s2"/>
+          <ellipse cx="50" cy="20" rx="3" ry="12" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="2" class="s3"/>
+          <ellipse cx="64" cy="24" rx="3" ry="9" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="2" class="s1"/>
+        </svg>
+        <span class="cup-name">Cold Brew</span>
+        <span class="cup-desc">Oscuro · Intenso</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- MENÚ -->
+<section id="menu" class="sec fade">
+  <div class="sec-header centered">
+    <p class="label">Lo que ofrecemos</p>
+    <h2 class="title">Nuestro Menú</h2>
+    <p class="sec-sub">Granos de origen único, preparados con técnica y cuidado en cada taza.</p>
+  </div>
   <div class="menu-grid">
-
     <div class="menu-card">
-      <h3>☕ Café Espresso</h3>
-      <p>Intenso y aromático</p>
-      <span>$1200</span>
+      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&q=80" alt="Espresso" loading="lazy">
+      <div class="menu-info">
+        <div>
+          <h3>Espresso</h3>
+          <p>Intenso, concentrado y equilibrado. El café en su forma más pura.</p>
+        </div>
+        <span class="menu-price">$1200</span>
+      </div>
     </div>
-
     <div class="menu-card">
-      <h3>🥐 Medialunas</h3>
-      <p>Recién horneadas</p>
-      <span>$900</span>
+      <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&q=80" alt="Latte" loading="lazy">
+      <div class="menu-info">
+        <div>
+          <h3>Latte</h3>
+          <p>Espresso suave con leche vaporizada y crema sedosa.</p>
+        </div>
+        <span class="menu-price">$1500</span>
+      </div>
     </div>
-
     <div class="menu-card">
-      <h3>🍰 Tortas</h3>
-      <p>Sabores caseros</p>
-      <span>$1500</span>
+      <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&q=80" alt="Cappuccino" loading="lazy">
+      <div class="menu-info">
+        <div>
+          <h3>Cappuccino</h3>
+          <p>Equilibrio perfecto de espresso, leche y espuma cremosa.</p>
+        </div>
+        <span class="menu-price">$1400</span>
+      </div>
     </div>
-
     <div class="menu-card">
-      <h3>🧋 Bebidas frías</h3>
-      <p>Refrescantes y naturales</p>
-      <span>$1300</span>
+      <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=400&q=80" alt="Cold Brew" loading="lazy">
+      <div class="menu-info">
+        <div>
+          <h3>Cold Brew</h3>
+          <p>Macerado en frío por 24 horas. Suave y refrescante.</p>
+        </div>
+        <span class="menu-price">$1800</span>
+      </div>
     </div>
-
-  </div>
-</section>
-<section class="about">
-  <h2>Nuestra esencia</h2>
-  <p>
-    En Aura Café creemos que cada taza cuenta una historia. 
-    Creamos un espacio donde el café, el diseño y la tranquilidad se combinan 
-    para ofrecer una experiencia única.
-  </p>
-</section>
-<section id="galeria" class="galeria">
-  <h2>Nuestro espacio</h2>
-  <p>Un ambiente pensado para relajarte y disfrutar</p>
-
-  <div class="carousel">
-
-    <button class="prev">‹</button>
-
-    <div class="carousel-track">
-      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="Café servido">
-      <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085" alt="Interior cafetería">
-      <img src="https://images.unsplash.com/photo-1521305916504-4a1121188589" alt="Taza de café">
-      <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348" alt="Barista preparando café">
-    </div>
-
-    <button class="next">›</button>
-
   </div>
 </section>
 
-<section class="ubicacion">
-  <h2>Visitános</h2>
+<!-- GALERÍA -->
+<div class="galeria-bg fade">
+  <div class="galeria-inner centered">
+    <p class="label">Nuestra historia</p>
+    <h2 class="title">Momentos en Aura</h2>
+    <div class="gal-grid">
+      <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=700&q=80" alt="Ambiente Aura" loading="lazy" class="gal-main">
+      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&q=80" alt="Espresso" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&q=80" alt="Latte" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&q=80" alt="Café" loading="lazy">
+    </div>
+  </div>
+</div>
 
-  <p>📍 Corrientes Capital, Argentina</p>
-  <p>🕒 Lunes a Sábado 8:00 - 20:00</p>
-
-  <div class="map-container">
-    <iframe 
-      src="https://maps.google.com/maps?q=corrientes&t=&z=13&ie=UTF8&iwloc=&output=embed">
-    </iframe>
+<!-- CURSOS -->
+<section id="cursos" class="sec fade">
+  <div class="sec-header centered">
+    <p class="label">Aprendé con nosotros</p>
+    <h2 class="title">Cursos de Barista</h2>
+    <p class="sec-sub">Desde cero hasta técnicas avanzadas. Aprende de los mejores en un ambiente íntimo y profesional.</p>
+  </div>
+  <div class="cursos-grid">
+    <div class="curso-card">
+      <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true">
+        <rect x="6" y="12" width="24" height="18" rx="5" fill="#2a1f14" stroke="#c08457" stroke-width="1.2"/>
+        <path d="M30 18 Q36 18 36 24 Q36 30 30 30" stroke="#c08457" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        <rect x="4" y="30" width="28" height="3" rx="1.5" fill="#c08457" opacity=".5"/>
+        <ellipse cx="14" cy="8" rx="2" ry="6" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1.5" class="s1"/>
+        <ellipse cx="22" cy="6" rx="2" ry="7" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1.5" class="s2"/>
+      </svg>
+      <h3>Barista Inicial</h3>
+      <p>Fundamentos del café, técnicas de extracción y manejo del equipo.</p>
+      <span class="ctag">Principiantes</span>
+    </div>
+    <div class="curso-card">
+      <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true">
+        <rect x="6" y="12" width="24" height="18" rx="5" fill="#2a1f14" stroke="#c08457" stroke-width="1.2"/>
+        <path d="M30 18 Q36 18 36 24 Q36 30 30 30" stroke="#c08457" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        <rect x="4" y="30" width="28" height="3" rx="1.5" fill="#c08457" opacity=".5"/>
+        <ellipse cx="12" cy="20" rx="5" ry="4" fill="none" stroke="#d4a574" stroke-width="1.2" opacity=".8"/>
+        <path d="M17 20 Q20 14 23 20" stroke="#d4a574" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+        <ellipse cx="14" cy="8" rx="2" ry="6" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1.5" class="s2"/>
+        <ellipse cx="22" cy="6" rx="2" ry="7" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1.5" class="s3"/>
+      </svg>
+      <h3>Latte Art</h3>
+      <p>Domina el arte del vapor y crea diseños increíbles en cada taza.</p>
+      <span class="ctag">Intermedio</span>
+    </div>
+    <div class="curso-card">
+      <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true">
+        <rect x="6" y="12" width="24" height="18" rx="5" fill="#2a1f14" stroke="#c08457" stroke-width="1.2"/>
+        <path d="M30 18 Q36 18 36 24 Q36 30 30 30" stroke="#c08457" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        <rect x="4" y="30" width="28" height="3" rx="1.5" fill="#c08457" opacity=".5"/>
+        <circle cx="18" cy="21" r="5" fill="none" stroke="#c08457" stroke-width="1.2" opacity=".7"/>
+        <circle cx="18" cy="21" r="2" fill="#c08457" opacity=".5"/>
+        <ellipse cx="14" cy="8" rx="2" ry="6" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1.5" class="s3"/>
+        <ellipse cx="22" cy="6" rx="2" ry="7" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1.5" class="s1"/>
+      </svg>
+      <h3>Barista Experto</h3>
+      <p>Perfiles de tueste, catas y todo lo que necesita un profesional.</p>
+      <span class="ctag">Avanzado</span>
+    </div>
   </div>
 </section>
-<section class="reviews">
-  <h2>Lo que dicen nuestros clientes</h2>
-  <p>Experiencias reales en Aura Café</p>
 
-  <div class="reviews-grid">
-
-    <div class="review-card">
-      <p>"El mejor café de la ciudad, el ambiente es increíble."</p>
-      <span>★★★★★</span>
-      <h4>- Martina</h4>
+<!-- UBICACIÓN -->
+<div class="map-bg fade" id="ubicacion">
+  <div class="map-inner centered">
+    <p class="label">Encontranos</p>
+    <h2 class="title">Visitanos en Corrientes</h2>
+    <div class="map-wrap">
+      <iframe src="https://maps.google.com/maps?q=corrientes&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy" title="Mapa Aura Café Corrientes"></iframe>
     </div>
+  </div>
+</div>
 
-    <div class="review-card">
-      <p>"Perfecto para trabajar o relajarse. Muy recomendado."</p>
-      <span>★★★★★</span>
-      <h4>- Lucas</h4>
-    </div>
-
-    <div class="review-card">
-      <p>"Excelente atención y productos de calidad."</p>
-      <span>★★★★★</span>
-      <h4>- Bibiana</h4>
-    </div>
-
+<!-- CONTACTO -->
+<section id="contacto" class="contacto-sec fade">
+  <div class="contact-card">
+    <svg width="48" height="48" viewBox="0 0 48 48" style="margin:0 auto 18px;display:block" aria-hidden="true">
+      <circle cx="24" cy="24" r="23" fill="rgba(37,211,102,.1)" stroke="rgba(37,211,102,.3)" stroke-width="1"/>
+      <path d="M34 30c-1.5-.8-3-1.6-4-1-.6.3-1.1 1.8-1.7 2-.5.2-1.2-.1-2.1-.6-2.1-1.2-3.7-3.3-4.6-5-.2-.5-.2-1 .3-1.4.5-.5 1.2-1 1.3-1.5.1-.5-.5-2.2-1-3.5-.5-1.2-1-1.5-1.7-1.5-.6 0-1.3.5-2 1.2-1.8 2-1.4 4.6.8 7.5 2.2 2.9 5.5 5.5 8.5 6.5 1 .3 2 .3 2.8-.1.9-.4 1.6-1.2 2-2.1.2-.8-.1-1.2-1.6-2z" fill="#25D366"/>
+    </svg>
+    <h2>Reservá tu mesa</h2>
+    <p>Escribinos por WhatsApp y te confirmamos disponibilidad en minutos. Respondemos todos los días.</p>
+    <a href="https://wa.me/5493794235676?text=Hola%20quiero%20reservar" class="btn-wa" target="_blank" rel="noopener">
+      Reservar por WhatsApp
+    </a>
   </div>
 </section>
-<section id="contacto" class="contacto">
-  <h2>Reservá tu mesa</h2>
-  <p>Viví la experiencia Aura Café</p>
 
-  <a href="https://wa.me/5493794235676" class="btn" target="_blank">
-    WhatsApp
-  </a>
-</section>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-logo">Aura Café</div>
+  <p class="footer-copy">© 2026 Aura Café · Corrientes, Argentina</p>
+  <nav class="footer-links">
+    <a href="#menu">Menú</a>
+    <a href="#cursos">Cursos</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</footer>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
+<!-- BOTÓN WHATSAPP FLOTANTE -->
+<a href="https://wa.me/5493794235676?text=Hola%20quiero%20reservar"
+   class="wa-fab"
+   target="_blank"
+   rel="noopener"
+   aria-label="Contactar por WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 48 48" fill="none">
+    <path d="M34 30c-1.5-.8-3-1.6-4-1-.6.3-1.1 1.8-1.7 2-.5.2-1.2-.1-2.1-.6-2.1-1.2-3.7-3.3-4.6-5-.2-.5-.2-1 .3-1.4.5-.5 1.2-1 1.3-1.5.1-.5-.5-2.2-1-3.5-.5-1.2-1-1.5-1.7-1.5-.6 0-1.3.5-2 1.2-1.8 2-1.4 4.6.8 7.5 2.2 2.9 5.5 5.5 8.5 6.5 1 .3 2 .3 2.8-.1.9-.4 1.6-1.2 2-2.1.2-.8-.1-1.2-1.6-2z" fill="white" stroke="white" stroke-width=".5"/>
+    <path d="M24 4C13 4 4 13 4 24c0 3.5.9 6.9 2.7 9.8L4 44l10.5-2.7C17.3 43 20.6 44 24 44c11 0 20-9 20-20S35 4 24 4zm0 36c-3.1 0-6.1-.8-8.7-2.4l-.6-.4-6.2 1.6 1.6-6-.4-.6C8.1 30 7.2 27 7.2 24 7.2 14.8 14.8 7.2 24 7.2S40.8 14.8 40.8 24 33.2 40 24 40z" fill="white"/>
+  </svg>
+</a>
 
-  const track = document.querySelector(".carousel-track");
-  const images = document.querySelectorAll(".carousel-track img");
-
-  let index = 0;
-
-  document.querySelector(".next").onclick = () => {
-    index = (index + 1) % images.length;
-    track.style.transform = `translateX(-${index * 100}%)`;
-  };
-
-  document.querySelector(".prev").onclick = () => {
-    index = (index - 1 + images.length) % images.length;
-    track.style.transform = `translateX(-${index * 100}%)`;
-  };
-
-});
-</script>
-
+<script src="main.js"></script>
 </body>
 </html>
